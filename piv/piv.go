@@ -116,8 +116,8 @@ type YubiKey struct {
 
 // Close releases the connection to the smart card.
 func (yk *YubiKey) Close() error {
-	err1 := yk.h.Close()
-	err2 := yk.ctx.Close()
+	err1 := yk.ctx.Close()
+	err2 := yk.h.Close()
 	if err1 == nil {
 		return err2
 	}
